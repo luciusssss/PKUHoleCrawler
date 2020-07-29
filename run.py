@@ -1,7 +1,9 @@
+import sys
+import time
+from getpass import getpass
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import time
-import sys
 
 from post import Post, Reply
 
@@ -40,7 +42,7 @@ def get_posts(driver):
         fout.write(post_tree.text + '\n')
 
 
-user_token = sys.argv[1]
+user_token = getpass("User token:")
 
 chrome_options = Options()
 chrome_options.add_argument('--headless')
